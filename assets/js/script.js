@@ -126,15 +126,19 @@ document.addEventListener("DOMContentLoaded", () => {
         successMessage.style.display = "block"; // Menampilkan pesan sukses
     }
 
-    // Fungsi untuk mereset permainan
     function restartGame() {
         // Reset semua komponen permainan
         collectedComponents = 0;
         ariWalkCounter = 0;
         tower.innerHTML = "";
         ariImgContainer.innerHTML = `<img id="ari-img" src="assets/images/ari-standing.gif" alt="Ari" />`; // Reset gambar Ari
-        document.getElementById("success-message").style.display = "none"; // Sembunyikan pesan sukses
+        const successMessage = document.getElementById("success-message");
+        if (successMessage) {
+            successMessage.style.display = "none"; // Sembunyikan pesan sukses
+            successMessage.remove(); // Hapus elemen success message
+        }
         map.classList.remove("hidden"); // Tampilkan kembali peta
         quiz.classList.add("hidden"); // Sembunyikan quiz
     }
+    
 });
