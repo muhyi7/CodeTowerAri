@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     let ariWalkCounter = 0; // Menghitung berapa kali gambar Ari ditambahkan
+    let collectedComponents = 0; // Menyimpan jumlah komponen yang terkumpul
 
     // Event listener untuk pos
     document.querySelectorAll(".pos").forEach(pos => {
@@ -59,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event untuk Bangun Menara
     document.getElementById("final-level").addEventListener("click", () => {
-        if (tower.children.length >= 4) {
-            alert("Selamat! Anda telah berhasil membangun Menara Coding!");
+        if (collectedComponents >= 4) {
+            showSuccessMessage();
         } else {
             alert("Kumpulkan semua komponen terlebih dahulu!");
         }
@@ -91,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (selectedIndex == correctAnswer) {
             alert("Benar! Anda mendapatkan item.");
             addImageToAriWalk(); // Menambahkan gambar Ari ke bawah setiap selesai pos
+            collectedComponents++; // Menambahkan komponen tower yang terkumpul
             backToMap.click();
         } else {
             alert("Jawaban salah. Coba lagi!");
@@ -106,5 +108,33 @@ document.addEventListener("DOMContentLoaded", () => {
             ariImgContainer.appendChild(img); // Tambahkan gambar ke dalam container ari-character
             ariWalkCounter++; // Increment counter untuk gambar berikutnya
         }
+    }
+
+    // Fungsi untuk menampilkan pesan sukses
+    function showSuccessMessage() {
+        const successMessage = document.createElement("div");
+        successMessage.id = "success-message";
+        successMessage.textContent = "Selamat! Anda berhasil membangun Menara Coding!";
+        document.body.appendChild(successMessage);
+
+        // Menambahkan tombol untuk restart
+        const restartButton = document.createElement("button");
+        restartButton.textContent = "Restart";
+        restartButton.addEventListener("click", () => restartGame());
+        successMessage.appendChild(restartButton);
+
+        successMessage.style.display = "block"; // Menampilkan pesan sukses
+    }
+
+    // Fungsi untuk mereset permainan
+    function restartGame() {
+        // Reset semua komponen permainan
+        collectedComponents = 0;
+        ariWalkCounter = 0;
+        tower.innerHTML = "";
+        ariImgContainer.innerHTML = `<img id="ari-img" src="assets/images/ari-standing.gif" alt="Ari" />`; // Reset gambar Ari
+        document.getElementById("success-message").style.display = "none"; // Sembunyikan pesan sukses
+        map.classList.remove("hidden"); // Tampilkan kembali peta
+        quiz.classList.add("hidden"); // Sembunyikan quiz
     }
 });

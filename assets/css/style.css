@@ -9,6 +9,7 @@ body {
     align-items: center;
 }
 
+/* Header */
 header {
     text-align: center;
     padding: 20px;
@@ -16,12 +17,14 @@ header {
     color: white;
 }
 
+/* Container Game */
 #game-container {
     width: 80%;
     max-width: 800px;
     margin: auto;
 }
 
+/* Tata letak Main */
 main {
     display: flex;
     flex-direction: column;
@@ -29,6 +32,7 @@ main {
     margin-top: 20px;
 }
 
+/* Tombol */
 button {
     margin: 10px;
     padding: 10px 20px;
@@ -43,10 +47,12 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Menyembunyikan elemen */
 .hidden {
     display: none;
 }
 
+/* Inventori */
 #inventory {
     margin-top: 20px;
 }
@@ -56,18 +62,21 @@ button:hover {
     padding: 0;
 }
 
+/* Gambar Ari */
 #ari-character {
     display: flex;
     flex-direction: column; /* Menata gambar ke bawah */
-    align-items: center; /* Opsional, untuk menata gambar secara horizontal di tengah */
-    gap: 10px; /* Opsional, memberikan jarak antar gambar */
+    align-items: center; /* Menata gambar secara horizontal di tengah */
+    gap: 10px; /* Memberikan jarak antar gambar */
 }
 
+/* Ukuran Gambar Ari */
 #ari-img {
     width: 100px;
     height: auto;
 }
 
+/* Tower */
 #tower li {
     list-style-type: none;
     padding: 5px;
@@ -79,4 +88,18 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+}
+
+/* Pesan Sukses */
+#success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Awalnya sembunyikan */
 }
