@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Tower</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header -->
+        <header>
+            <h1>Code Tower</h1>
+            <p>Bantu Ari membangun Menara Coding!</p>
+        </header>
+
+        <!-- Main Game Area -->
+        <main id="game-area">
+            <!-- Map -->
+            <section id="map">
+                <p>Pilih pos untuk memulai tantangan:</p>
+                <button class="pos" data-pos="1">Pos 1: Dasar Pemrograman</button>
+                <button class="pos" data-pos="2">Pos 2: Logika</button>
+                <button class="pos" data-pos="3">Pos 3: Debugging</button>
+                <button class="pos" data-pos="4">Pos 4: Algoritma</button>
+                <button id="final-level">Bangun Menara Coding</button>
+            </section>
+
+            <!-- Quiz -->
+            <section id="quiz" class="hidden">
+                <h2 id="quiz-title">Kuis</h2>
+                <div id="question"></div>
+                <div id="options"></div>
+                <button id="submit-answer">Submit</button>
+                <button id="back-to-map">Kembali ke Peta</button>
+            </section>
+
+            <!-- Inventory with Ari's character and Tower -->
+            <section id="inventory">
+                <h3>Inventori</h3>
+                <div id="ari-character">
+                    <img id="ari-img" src="assets/images/ari-standing.gif" alt="Ari" />
+                </div>
+                <ul id="tower">
+                    <!-- The tower will be dynamically built here -->
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 Code Tower</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Reset dan Gaya Dasar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#game-container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+#inventory {
+    margin-top: 20px;
+}
+
+#inventory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#ari-character {
+    display: flex;
+    flex-direction: column; /* Menata gambar ke bawah */
+    align-items: center; /* Opsional, untuk menata gambar secara horizontal di tengah */
+    gap: 10px; /* Opsional, memberikan jarak antar gambar */
+}
+
+#ari-img {
+    width: 100px;
+    height: auto;
+}
+
+#tower li {
+    list-style-type: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#tower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
